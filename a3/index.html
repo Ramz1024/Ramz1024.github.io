@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        alert(n1.value + n2.value);
+        function Sum(){
+        let p = Number(n1.value);
+        let q =  Number(n2.value);
+        alert(p+q);
+    }
     </script>
 </head>
 <body>
@@ -13,6 +17,7 @@
     <h2>Adding two elements</h2>
     <input type="text" id="n1">
     <input type="text" id="n2">
+    <button onclick="Sum()" style="background-color: rgb(230, 212, 12);"> Add</button>
     
 </body>
 </html>
