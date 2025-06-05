@@ -5,30 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function Sum(){
+        const Add=()=>{
         let p = Number(n1.value);
         let q =  Number(n2.value);
-        //alert(p+q);
-        divResult.innerHTML = p+q;
+        return p+q;
+        
         }
-        function Sub(){
+        const Sub=()=>{
         let p = Number(n1.value);
         let q =  Number(n2.value);
-        //alert(p+q);
-        divResult.innerHTML = p-q;
+        return p-q;
+        
         }
-        function Mult(){
+        const Mult=()=>{
         let p = Number(n1.value);
         let q =  Number(n2.value);
-        //alert(p+q);
-        divResult.innerHTML = p*q;
+        return p*q;
         }
-        function Div(){
+        const Div=()=>{
         let p = Number(n1.value);
         let q =  Number(n2.value);
-        //alert(p+q);
-        divResult.innerHTML = p/q;
+        return p/q;
+        
         }
+
+        const Calc=()=>{
+            add=Add();
+            sub=Sub();
+            mult= Mult();
+            div= Div();
+            addResult.innerHTML = "Sum = " + add;
+            subResult.innerHTML = "Difference = " + sub;
+            multResult.innerHTML = "Product = "+ mult;
+            divResult.innerHTML = "Division= "+ div;
+
+        }
+        
     </script>
 </head>
 <body>
@@ -36,11 +48,12 @@
     <h2>Calculator</h2>
     <input type="text" id="n1">
     <input type="text" id="n2">
-    <button onclick="Sum()" style="background-color: rgb(230, 212, 12);"> Add</button>
-    <button onclick="Sub()" style="background-color: rgb(230, 212, 12);">Subtract</button>
-    <button onclick="Mult()" style="background-color: rgb(230, 212, 12);"> Multiply</button>
-    <button onclick="Div()" style="background-color: rgb(230, 212, 12);">Division</button>
+    <button onclick="Calc()" style="background-color: rgb(230, 212, 12);"> Calculate</button>
+    
 
+    <div id="addResult"></div>
+    <div id="subResult"></div>
+    <div id="multResult"></div>
     <div id="divResult"></div>
     
 </body>
