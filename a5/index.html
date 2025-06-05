@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        const show=()=>{
+            u_name.innerHTML= "Name: " + n.value;
+            u_mail.innerHTML= "Email: " + email.value;
+            u_pass.innerHTML= "Password: " +password.value;
+        }
+
+    </script>
 </head>
 <body>
-    <scipt>
-        function add()
-    </scipt>
+    <h1>Assignment 5</h1>
+
+    <input type="text" id="n" style="display: block; margin:5px">
+    <input type="email" id="email" style="display: block; margin:5px">
+    <input type="password" id="password" style="display: block;margin:5px">
+    <button onclick="show()" style="background-color: yellow; display:block; margin:5px"> Submit </button>
+
+    <div id="u_name"></div>
+    <div id="u_mail"></div>
+    <div id="u_pass"></div>
+    
 </body>
 </html>
