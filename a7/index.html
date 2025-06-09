@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fruit List</title>
+</head>
+<body>
+  <h1>Fruit List</h1>
+
+  <input type="text" id="fruitInput">
+  <button onclick="add()">Add</button>
+  <button onclick="search()">Search</button>
+
+  <div id="divResult"></div>
+
+  <script>
+    let fruits = [];
+
+    function add() {
+      const fruit = document.getElementById("fruitInput").value.trim();
+      if (fruit === "") return;
+      fruits.push(fruit);
+      document.getElementById("fruitInput").value = "";
+      show(fruits);
+    }
+
+    function remove(name) {
+      fruits = fruits.filter(f => f !== name);
+      show(fruits);
+    }
+
+    function show(list) {
+      let text = "";
+      for (let i = 0; i < list.length; i++) {
+        text += "<li>" + list[i] + 
+                " <button onclick=\"remove('" + list[i] + "')\">Delete</button></li>";
+      }
+      document.getElementById("divResult").innerHTML = "<ul>" + text + "</ul>";
+    }
+
+    function search() {
+      const keyword = document.getElementById("fruitInput").value.trim().toLowerCase();
+      const filtered = fruits.filter(f => f.toLowerCase().includes(keyword));
+      show(filtered);
+    }
+  </script>
+</body>
+</html>
